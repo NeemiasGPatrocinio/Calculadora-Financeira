@@ -5,8 +5,11 @@ export default function Inicial({ navigation }) {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>calculadora financeira</Text>
-      <Pressable style={styles.button} onPress={() => navigation.navigate('Entrada')}>
-        <Text style={styles.buttonText}>Entrar</Text>
+      <Pressable style={styles.button} onPress={() => navigation.navigate('Login')}>
+        <Text style={styles.buttonText}>Login</Text>
+      </Pressable>
+      <Pressable style={[styles.button, styles.buttonSecondary]} onPress={() => navigation.navigate('Cadastro')}>
+        <Text style={styles.buttonText}>Cadastro</Text>
       </Pressable>
     </View>
   );
@@ -37,12 +40,16 @@ const styles = StyleSheet.create({
     paddingVertical: 14,
     paddingHorizontal: 36,
     position: 'absolute',
-    top: '65%',
+    top: '60%',
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.3,
     shadowRadius: 4,
     elevation: 3,
+  },
+  buttonSecondary: {
+    position: 'absolute',
+    top: '72%',
   },
   buttonText: {
     color: '#FFFFFF',
